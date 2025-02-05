@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const ContactPage = () => {
@@ -38,7 +38,6 @@ const ContactPage = () => {
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12">
       <br />
       <br />
-      
       <motion.h2
         className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
         initial={{ opacity: 0, y: -20 }}
@@ -47,15 +46,30 @@ const ContactPage = () => {
       >
         Contact Me
       </motion.h2>
-      
+
       {/* Contact Info Boxes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 w-full max-w-5xl">
-        <ContactBox icon={<FaMapMarkerAlt />} title="Location" info="Remote + Karachi, Pakistan" />
-        <ContactBox icon={<FaPhone />} title="Phone Number" info="03171214703" />
+        <ContactBox
+          icon={<FaMapMarkerAlt />}
+          title="Location"
+          info="Remote + Karachi, Pakistan"
+        />
+        <ContactBox
+          icon={<FaPhone />}
+          title="Phone Number"
+          info="03171214703"
+        />
         <ContactBox
           icon={<FaEnvelope />}
           title="Email"
-          info={<a href="mailto:zainab.cyber.dev@gmail.com" className="text-blue-400 hover:underline">zainab.cyber.dev@gmail.com</a>}
+          info={
+            <a
+              href="mailto:zainab.cyber.dev@gmail.com"
+              className="text-blue-400 hover:underline"
+            >
+              zainab.cyber.dev@gmail.com
+            </a>
+          }
         />
       </div>
 
@@ -99,8 +113,16 @@ const ContactPage = () => {
         </form>
 
         {/* Status Messages */}
-        {status === "success" && <p className="text-green-400 mt-4 text-center">Message sent successfully!</p>}
-        {status === "error" && <p className="text-red-400 mt-4 text-center">Something went wrong. Try again.</p>}
+        {status === "success" && (
+          <p className="text-green-400 mt-4 text-center">
+            Message sent successfully!
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-red-400 mt-4 text-center">
+            Something went wrong. Try again.
+          </p>
+        )}
       </div>
     </div>
   );
@@ -108,9 +130,9 @@ const ContactPage = () => {
 
 // Contact Box Component
 interface ContactBoxProps {
-  icon: any;
+  icon: JSX.Element;
   title: string;
-  info: string | any;
+  info: string | JSX.Element;
 }
 
 const ContactBox = ({ icon, title, info }: ContactBoxProps) => (
