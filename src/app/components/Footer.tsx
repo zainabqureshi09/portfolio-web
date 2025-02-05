@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaTwitter, FaGoogle, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,9 +22,9 @@ const Footer = () => {
 
       {/* Navigation Links */}
       <ul className="flex justify-center space-x-6 text-sm mb-4">
-        <li><a href="/" className="hover:text-gray-400 transition duration-300">Home</a></li>
-        <li><a href="/about" className="hover:text-gray-400 transition duration-300">About</a></li>
-        <li><a href="/contact" className="hover:text-gray-400 transition duration-300">Contact</a></li>
+        <li><Link href="/" className="hover:text-gray-400 transition duration-300">Home</Link></li>
+        <li><Link href="/about" className="hover:text-gray-400 transition duration-300">About</Link></li>
+        <li><Link href="/contact" className="hover:text-gray-400 transition duration-300">Contact</Link></li>
       </ul>
 
       {/* Copyright Text */}

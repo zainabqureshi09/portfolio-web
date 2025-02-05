@@ -6,7 +6,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<"success" | "error" | "">("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,7 +29,7 @@ const ContactPage = () => {
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
@@ -39,14 +39,14 @@ const ContactPage = () => {
       <br />
       <br />
       
-       <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Contact Me
-        </motion.h2>
+      <motion.h2
+        className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Contact Me
+      </motion.h2>
       
       {/* Contact Info Boxes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 w-full max-w-5xl">
@@ -107,8 +107,14 @@ const ContactPage = () => {
 };
 
 // Contact Box Component
-const ContactBox = ({ icon, title, info }: { icon: any; title: string; info: string | any }) => (
-  <div className=" p-6 text-white rounded-lg flex flex-col items-center text-center  transition-all duration-300 hover:shadow-xl">
+interface ContactBoxProps {
+  icon: any;
+  title: string;
+  info: string | any;
+}
+
+const ContactBox = ({ icon, title, info }: ContactBoxProps) => (
+  <div className="p-6 text-white rounded-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
     <div className="text-4xl text-blue-400 mb-3">{icon}</div>
     <h3 className="text-lg font-semibold">{title}</h3>
     <p className="text-sm">{info}</p>

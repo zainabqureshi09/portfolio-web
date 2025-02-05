@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const words = ["Web Developer", "UI/UX Designer", "Next.js Expert"];
 
 export default function HeroSection() {
@@ -34,7 +33,7 @@ export default function HeroSection() {
 
     const typingTimer = setTimeout(handleTyping, speed);
     return () => clearTimeout(typingTimer);
-  }, [text, isDeleting, wordIndex]);
+  }, [text, isDeleting, wordIndex, speed, pauseTime]);
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center mt-20 md:mt-24 lg:mt-28">
@@ -65,18 +64,20 @@ export default function HeroSection() {
         Transforming Ideas Into Reality
       </motion.h1>
 
-      {/* Typewriter Effect (Cursor Wipe Animation) */}
+      {/* Typewriter Effect */}
       <motion.div
         className="mt-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{text}</span>
+        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          {text}
+        </span>
         <span className="text-blue-500 animate-blink">|</span>
       </motion.div>
 
-
+      {/* Description */}
       <motion.p
         className="text-base sm:text-lg md:text-xl mt-4 text-gray-400 max-w-2xl px-4 md:px-0"
         initial={{ opacity: 0, y: 10 }}
@@ -96,23 +97,23 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.7 }}
       >
-        <Link href="https://drive.google.com/file/d/1AKnQEJLZoE8GLV3LiDucOzkVd4yGeBRo/view?usp=sharing" target="_blank">
+        <Link
+          href="https://drive.google.com/file/d/1AKnQEJLZoE8GLV3LiDucOzkVd4yGeBRo/view?usp=sharing"
+          target="_blank"
+        >
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="relative px-6 py-3 text-xl text-purple-500 font-semibold rounded-lg border border-purple-500 bg-transparent transition-all duration-300 hover:shadow-[0px_0px_15px_rgba(255,255,255,0.3)] before:absolute before:inset-0 before:rounded-lg before:border-4 before:border-transparent before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
+            className="relative px-6 py-3 text-xl text-purple-500 font-semibold rounded-lg border border-purple-500 bg-transparent transition-all duration-300 hover:shadow-[0px_0px_15px_rgba(255,255,255,0.3)] before:absolute before:inset-0 before:rounded-lg before:border-4 before:border-transparent before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none"
+          >
             Resume
-
           </motion.button>
         </Link>
         <Link href="/contact">
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="relative px-6 py-3 text-xl text-purple-500 font-semibold rounded-lg border border-purple-500 bg-transparent transition-all duration-300 hover:shadow-[0px_0px_15px_rgba(255,255,255,0.3)] before:absolute before:inset-0 before:rounded-lg before:border-4 before:border-transparent before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none">
+            className="relative px-6 py-3 text-xl text-purple-500 font-semibold rounded-lg border border-purple-500 bg-transparent transition-all duration-300 hover:shadow-[0px_0px_15px_rgba(255,255,255,0.3)] before:absolute before:inset-0 before:rounded-lg before:border-4 before:border-transparent before:bg-gradient-to-br before:from-white/10 before:to-transparent before:pointer-events-none"
+          >
             Contact Me
-
-
-
-
           </motion.button>
         </Link>
       </motion.div>
