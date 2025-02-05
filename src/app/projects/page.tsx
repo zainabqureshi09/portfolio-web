@@ -72,7 +72,7 @@ const ProjectsPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        My Skills
+        My Projects
       </motion.h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
           Explore our most innovative creations
