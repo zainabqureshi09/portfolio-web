@@ -59,6 +59,15 @@ const projects = [
     github: "https://github.com/zainabqureshi09/expenses-tracker",
     live: "https://expenses-tracker-phi.vercel.app/",
   },
+  {
+    id: 7,
+    title: "E-commerce Food website",
+    description: "An E commerce food website made with nextjs sanity and tailwindCSS.",
+    image: "/food.png",
+    techStack: ["HTML", "CSS","Sanity", "Typescript"],
+    github: "https://github.com/zainabqureshi09/Hackathon-3",
+    live: "https://hackathon-3-dusky-two.vercel.app/",
+  },
 ];
 
 const ProjectsPage = () => {
