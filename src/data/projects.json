@@ -1,0 +1,125 @@
+{
+  "featured": [
+    {
+      "id": "lensvision-ai",
+      "title": "LensVision AI Virtual Try-On",
+      "description": "Revolutionary AI-powered virtual try-on system using computer vision and 3D rendering. Experience the future of online shopping with real-time clothing visualization.",
+      "longDescription": "LensVision represents the cutting edge of e-commerce technology, combining TensorFlow's machine learning capabilities with Three.js 3D rendering to create an immersive virtual try-on experience. The system uses advanced computer vision algorithms to map clothing items onto users in real-time.",
+      "tech": ["Next.js", "TypeScript", "TensorFlow", "Three.js", "MongoDB", "OpenCV"],
+      "liveUrl": "https://lensvision-demo.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/lensvision-ai",
+      "image": "/projects/lensvision.jpg",
+      "featured": true,
+      "category": "AI/ML",
+      "status": "In Development",
+      "year": 2024
+    },
+    {
+      "id": "ghostmind-system",
+      "title": "GhostMind AI Agent Framework",
+      "description": "Intelligent automation framework that orchestrates AI agents to handle complex workflows. The Mind Hacker's secret weapon for system automation.",
+      "longDescription": "GhostMind is an advanced AI agent framework designed to automate complex business processes. It features intelligent task routing, multi-agent collaboration, and seamless integration with various APIs and systems.",
+      "tech": ["Python", "OpenAI API", "FastAPI", "Redis", "Docker", "Kubernetes"],
+      "liveUrl": "https://ghostmind-demo.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/ghostmind-system",
+      "image": "/projects/ghostmind.jpg",
+      "featured": true,
+      "category": "AI/Automation",
+      "status": "Production",
+      "year": 2024
+    }
+  ],
+  "projects": [
+    {
+      "id": "finance-tracker",
+      "title": "Finance Tracker",
+      "description": "A comprehensive personal finance tracker to manage expenses, income, and financial goals with interactive dashboards.",
+      "tech": ["Next.js", "TypeScript", "TailwindCSS", "Chart.js"],
+      "liveUrl": "https://finance-tracker-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/finance-tracker",
+      "image": "/finance.jpeg",
+      "featured": false,
+      "category": "Web App",
+      "year": 2024
+    },
+    {
+      "id": "ecommerce-ui",
+      "title": "E-Commerce UI/UX",
+      "description": "Modern e-commerce interface design with sleek animations and responsive layouts. Built for optimal user experience.",
+      "tech": ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
+      "liveUrl": "https://ecommerce-ui-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/ecommerce-ui",
+      "image": "/e-com.jpg",
+      "featured": false,
+      "category": "UI/UX",
+      "year": 2024
+    },
+    {
+      "id": "resume-builder",
+      "title": "AI Resume Builder",
+      "description": "Intelligent resume builder with AI-powered content suggestions and multiple professional templates.",
+      "tech": ["HTML", "CSS", "TypeScript", "OpenAI API"],
+      "liveUrl": "https://resume-builder-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/resume-builder",
+      "image": "/resume-builder.jpg",
+      "featured": false,
+      "category": "Productivity",
+      "year": 2024
+    },
+    {
+      "id": "expense-tracker",
+      "title": "Smart Expense Tracker",
+      "description": "Intelligent expense tracking with automated categorization and insightful spending analytics.",
+      "tech": ["HTML", "CSS", "TypeScript", "Chart.js"],
+      "liveUrl": "https://expense-tracker-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/expense-tracker",
+      "image": "/expense.jpeg",
+      "featured": false,
+      "category": "Finance",
+      "year": 2023
+    },
+    {
+      "id": "food-ecommerce",
+      "title": "Ghost Kitchen - Food Delivery",
+      "description": "Full-stack food delivery platform with real-time ordering, payment integration, and admin dashboard.",
+      "tech": ["Next.js", "Sanity", "TypeScript", "Stripe API"],
+      "liveUrl": "https://food-delivery-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/ghost-kitchen",
+      "image": "/food.png",
+      "featured": false,
+      "category": "E-commerce",
+      "year": 2023
+    },
+    {
+      "id": "college-website",
+      "title": "Digital Campus Hub",
+      "description": "Modern college website with student portal, course management, and interactive campus tour.",
+      "tech": ["Next.js", "TailwindCSS", "TypeScript"],
+      "liveUrl": "https://college-website-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/digital-campus",
+      "image": "/college.png",
+      "featured": false,
+      "category": "Education",
+      "year": 2023
+    },
+    {
+      "id": "quiz-app",
+      "title": "Interactive Quiz Engine",
+      "description": "Engaging quiz application with real-time scoring, multiple question types, and progress tracking.",
+      "tech": ["HTML", "CSS", "JavaScript", "LocalStorage"],
+      "liveUrl": "https://quiz-app-zainab.vercel.app",
+      "githubUrl": "https://github.com/zainabayaz/interactive-quiz",
+      "image": "/quiz-app.jpeg",
+      "featured": false,
+      "category": "Education",
+      "year": 2023
+    }
+  ],
+  "technologies": {
+    "frontend": ["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Three.js"],
+    "backend": ["Node.js", "Python", "FastAPI", "Express.js"],
+    "ai_ml": ["TensorFlow", "OpenAI API", "Computer Vision", "Machine Learning"],
+    "database": ["MongoDB", "Redis", "Sanity"],
+    "tools": ["Git", "Docker", "Vercel", "AWS"]
+  }
+}

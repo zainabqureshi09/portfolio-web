@@ -2,4 +2,289 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Comprehensive Hacker Theme CSS Variables */
+:root {
+  /* Core Background Colors */
+  --background: #0a0a0a;
+  --background-secondary: #0f0f0f;
+  --background-tertiary: #1a1a1a;
+  --foreground: #ffffff;
+  --foreground-secondary: #e0e0e0;
+  --foreground-muted: #a0a0a0;
+  
+  /* Primary Hacker Colors */
+  --cyber-green: #00ff88;
+  --cyber-green-dark: #00cc6a;
+  --cyber-green-light: #33ffaa;
+  --cyber-cyan: #00ffff;
+  --cyber-cyan-dark: #00cccc;
+  --cyber-cyan-light: #33ffff;
+  --cyber-blue: #0088ff;
+  --cyber-blue-dark: #0066cc;
+  --cyber-blue-light: #33aaff;
+  --cyber-purple: #bb86fc;
+  --cyber-purple-dark: #9965cb;
+  --cyber-purple-light: #d4a7ff;
+  --cyber-pink: #ff0080;
+  --cyber-pink-dark: #cc0066;
+  --cyber-pink-light: #ff33aa;
+  --cyber-orange: #ff8800;
+  --cyber-orange-dark: #cc6600;
+  --cyber-orange-light: #ffaa33;
+  
+  /* Glow Effects */
+  --cyber-glow-green: rgba(0, 255, 136, 0.4);
+  --cyber-glow-cyan: rgba(0, 255, 255, 0.4);
+  --cyber-glow-blue: rgba(0, 136, 255, 0.4);
+  --cyber-glow-purple: rgba(187, 134, 252, 0.4);
+  --cyber-glow-pink: rgba(255, 0, 128, 0.4);
+  
+  /* Border and UI Colors */
+  --border-primary: var(--cyber-green);
+  --border-secondary: var(--cyber-cyan);
+  --border-muted: rgba(255, 255, 255, 0.1);
+  
+  /* Status Colors */
+  --success: var(--cyber-green);
+  --warning: var(--cyber-orange);
+  --error: var(--cyber-pink);
+  --info: var(--cyber-cyan);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--cyber-green), var(--cyber-cyan));
+  --gradient-secondary: linear-gradient(135deg, var(--cyber-purple), var(--cyber-pink));
+  --gradient-tertiary: linear-gradient(135deg, var(--cyber-blue), var(--cyber-purple));
+  --gradient-background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
 
+/* Base styles for cyber theme */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-green);
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--cyber-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-cyan);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--cyber-glow);
+  color: #000000;
+}
+
+/* Enhanced Utility Classes */
+.cyber-border {
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 0 10px var(--cyber-glow-green);
+}
+
+.cyber-border-secondary {
+  border: 1px solid var(--border-secondary);
+  box-shadow: 0 0 10px var(--cyber-glow-cyan);
+}
+
+.cyber-glow {
+  box-shadow: 0 0 20px var(--cyber-glow-green);
+}
+
+.cyber-glow-cyan {
+  box-shadow: 0 0 20px var(--cyber-glow-cyan);
+}
+
+.cyber-glow-purple {
+  box-shadow: 0 0 20px var(--cyber-glow-purple);
+}
+
+.cyber-glow-pink {
+  box-shadow: 0 0 20px var(--cyber-glow-pink);
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.text-shadow-cyber {
+  text-shadow: 0 0 10px var(--cyber-green), 0 0 20px var(--cyber-green), 0 0 30px var(--cyber-green);
+}
+
+.bg-cyber-gradient {
+  background: var(--gradient-background);
+}
+
+.bg-cyber-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-muted);
+  backdrop-filter: blur(10px);
+}
+
+.bg-cyber-card-hover {
+  background: var(--background-tertiary);
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 0 20px var(--cyber-glow-green);
+}
+
+/* Terminal-style Elements */
+.terminal-window {
+  background: var(--background);
+  border: 2px solid var(--cyber-green);
+  border-radius: 8px;
+  box-shadow: 0 0 30px var(--cyber-glow-green);
+  position: relative;
+}
+
+.terminal-window::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cyber-pink);
+  box-shadow: 20px 0 0 var(--cyber-orange), 40px 0 0 var(--cyber-green);
+}
+
+.terminal-text {
+  font-family: 'Courier New', monospace;
+  color: var(--cyber-green);
+  text-shadow: 0 0 5px var(--cyber-glow-green);
+}
+
+/* Animations */
+@keyframes cyber-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--cyber-glow-green);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--cyber-glow-green), 0 0 40px var(--cyber-glow-green);
+  }
+}
+
+@keyframes text-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes cyber-glow-rotate {
+  0% {
+    box-shadow: 0 0 20px var(--cyber-glow-green);
+  }
+  33% {
+    box-shadow: 0 0 20px var(--cyber-glow-cyan);
+  }
+  66% {
+    box-shadow: 0 0 20px var(--cyber-glow-purple);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--cyber-glow-green);
+  }
+}
+
+.cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+.text-flicker {
+  animation: text-flicker 1.5s ease-in-out infinite;
+}
+
+.cyber-glow-rotate {
+  animation: cyber-glow-rotate 3s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.cyber-hover-effect {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyber-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 25px var(--cyber-glow-green);
+}
+
+/* Button Styles */
+.cyber-button {
+  background: transparent;
+  border: 2px solid var(--cyber-green);
+  color: var(--cyber-green);
+  padding: 12px 24px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+  color: var(--background);
+  background: var(--cyber-green);
+  box-shadow: 0 0 30px var(--cyber-glow-green);
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+/* Accessibility - reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}
