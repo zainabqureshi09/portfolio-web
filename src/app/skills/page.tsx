@@ -111,23 +111,25 @@ const getLevelColor = (level: string) => {
 
 export default function SkillsPage() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 text-white">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-4 xs:px-6 sm:px-8 py-12 xs:py-16 md:py-20 text-white mt-16 xs:mt-20 md:mt-24">
       {/* Heading */}
       <motion.h2
-        className="text-5xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+        className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 leading-tight"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Technical Arsenal
+        <span className="block xs:inline">Technical</span>
+        <span className="block xs:inline xs:ml-2">Arsenal</span>
       </motion.h2>
 
-      <p className="mt-4 text-lg text-gray-300 text-center max-w-2xl">
-        A comprehensive toolkit spanning from algorithms to AI, built through 30+ projects including large-scale applications with 12MB+ codebases.
+      <p className="mt-3 xs:mt-4 text-sm xs:text-base sm:text-lg text-gray-300 text-center max-w-xs xs:max-w-md sm:max-w-lg md:max-w-2xl px-2 xs:px-4 sm:px-0">
+        <span className="hidden sm:inline">A comprehensive toolkit spanning from algorithms to AI, built through 30+ projects including large-scale applications with 12MB+ codebases.</span>
+        <span className="sm:hidden">Toolkit spanning algorithms to AI, built through 30+ projects with large codebases.</span>
       </p>
 
       {/* Skills Categories */}
-      <div className="mt-12 w-full max-w-7xl space-y-12">
+      <div className="mt-8 xs:mt-10 sm:mt-12 w-full max-w-7xl space-y-8 xs:space-y-10 sm:space-y-12">
         {Object.entries(skillCategories).map(([category, skills], categoryIndex) => (
           <motion.div
             key={category}
@@ -138,7 +140,7 @@ export default function SkillsPage() {
           >
             {/* Category Title */}
             <motion.h3
-              className="text-2xl md:text-3xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400"
+              className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 xs:mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 + 0.2 }}
@@ -148,7 +150,7 @@ export default function SkillsPage() {
 
             {/* Skills Grid for Category */}
             <motion.div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+              className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 xs:gap-4 sm:gap-6"
               initial="hidden"
               animate="visible"
               variants={{
@@ -162,7 +164,7 @@ export default function SkillsPage() {
               {skills.map((skill, skillIndex) => (
                 <motion.div
                   key={`${category}-${skillIndex}`}
-                  className="relative group flex flex-col items-center p-4 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                  className="relative group flex flex-col items-center p-2 xs:p-3 sm:p-4 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
                   variants={{
                     hidden: { opacity: 0, y: 20, scale: 0.8 },
                     visible: { opacity: 1, y: 0, scale: 1 },
@@ -183,9 +185,9 @@ export default function SkillsPage() {
                   />
 
                   {/* Level Indicator */}
-                  <div className="absolute top-2 right-2">
+                  <div className="absolute top-1 xs:top-1.5 sm:top-2 right-1 xs:right-1.5 sm:right-2">
                     <div 
-                      className="w-2 h-2 rounded-full"
+                      className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full"
                       style={{ backgroundColor: getLevelColor(skill.level) }}
                       title={skill.level}
                     />
@@ -193,19 +195,19 @@ export default function SkillsPage() {
 
                   {/* Skill Icon */}
                   <motion.div
-                    className="w-12 h-12 flex items-center justify-center mb-3"
+                    className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2 xs:mb-3"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
                     <skill.icon 
-                      className="w-10 h-10" 
+                      className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10" 
                       style={{ color: skill.color }} 
                     />
                   </motion.div>
 
                   {/* Skill Name */}
                   <motion.h4
-                    className="text-sm font-medium text-center text-gray-200 group-hover:text-white transition-colors duration-300"
+                    className="text-xs xs:text-sm font-medium text-center text-gray-200 group-hover:text-white transition-colors duration-300 line-clamp-2 px-1"
                     whileHover={{ scale: 1.05 }}
                   >
                     {skill.name}
@@ -213,7 +215,7 @@ export default function SkillsPage() {
 
                   {/* Level Badge (appears on hover) */}
                   <motion.div
-                    className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 rounded-md text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
+                    className="absolute -bottom-6 xs:-bottom-7 sm:-bottom-8 left-1/2 transform -translate-x-1/2 px-1.5 xs:px-2 py-0.5 xs:py-1 rounded-md text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
                     style={{
                       backgroundColor: getLevelColor(skill.level),
                       color: 'white'
@@ -230,26 +232,26 @@ export default function SkillsPage() {
 
       {/* Skills Summary Stats */}
       <motion.div
-        className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl"
+        className="mt-8 xs:mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 md:gap-8 w-full max-w-4xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className="text-center">
-          <div className="text-3xl font-bold text-green-400">8</div>
-          <div className="text-gray-400 text-sm">Advanced Skills</div>
+          <div className="text-2xl xs:text-3xl font-bold text-green-400">8</div>
+          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Advanced Skills</span><span className="xs:hidden">Advanced</span></div>
         </div>
         <div className="text-center">
-          <div className="text-3xl font-bold text-blue-400">12</div>
-          <div className="text-gray-400 text-sm">Proficient Skills</div>
+          <div className="text-2xl xs:text-3xl font-bold text-blue-400">12</div>
+          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Proficient Skills</span><span className="xs:hidden">Proficient</span></div>
         </div>
         <div className="text-center">
-          <div className="text-3xl font-bold text-purple-400">30+</div>
-          <div className="text-gray-400 text-sm">Projects Built</div>
+          <div className="text-2xl xs:text-3xl font-bold text-purple-400">30+</div>
+          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Projects Built</span><span className="xs:hidden">Projects</span></div>
         </div>
         <div className="text-center">
-          <div className="text-3xl font-bold text-cyan-400">13MB</div>
-          <div className="text-gray-400 text-sm">Largest Codebase</div>
+          <div className="text-2xl xs:text-3xl font-bold text-cyan-400">13MB</div>
+          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Largest Codebase</span><span className="xs:hidden">Codebase</span></div>
         </div>
       </motion.div>
     </section>

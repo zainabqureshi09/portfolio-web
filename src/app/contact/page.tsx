@@ -68,89 +68,89 @@ const ContactPage = () => {
   ];
 
   return (
-    <section className="min-h-screen px-6 py-20 bg-cyber-gradient">
+    <section className="min-h-screen px-4 xs:px-6 sm:px-8 md:px-12 py-16 xs:py-20 md:py-24 bg-cyber-gradient mt-16 xs:mt-20 md:mt-24">
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 xs:mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full mb-4 xs:mb-6 text-xs xs:text-sm" style={{
             background: 'var(--cyber-glow-cyan)',
             border: '1px solid var(--cyber-cyan)',
             color: 'var(--cyber-cyan)'
           }}>
-            <FiTerminal className="w-5 h-5" />
+            <FiTerminal className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
             <span className="font-mono">./contact --init</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: 'var(--foreground)' }}>
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 xs:mb-6 leading-tight" style={{ color: 'var(--foreground)' }}>
             <span style={{ color: 'var(--cyber-green)' }}>Let's</span>{' '}
             <span style={{ color: 'var(--cyber-cyan)' }}>Connect</span>
           </h1>
           
-          <p className="text-xl font-mono mb-8" style={{ color: 'var(--foreground-secondary)' }}>
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl font-mono mb-6 xs:mb-8 px-4 sm:px-0" style={{ color: 'var(--foreground-secondary)' }}>
             Ready to build something amazing together?
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 xs:gap-8 md:gap-12 items-start">
           {/* Left Side - Contact Info */}
           <motion.div
-            className="space-y-8"
+            className="space-y-4 xs:space-y-6 md:space-y-8 order-2 lg:order-1"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Terminal Status */}
-            <div className="terminal-window p-6">
-              <div className="space-y-3 font-mono text-sm">
+            <div className="terminal-window p-3 xs:p-4 sm:p-6">
+              <div className="space-y-2 xs:space-y-3 font-mono text-xs xs:text-sm">
                 <div style={{ color: 'var(--cyber-cyan)' }}>// System Status</div>
-                <div style={{ color: 'var(--foreground-secondary)' }}>
+                <div style={{ color: 'var(--foreground-secondary)' }} className="break-words">
                   <span style={{ color: 'var(--cyber-green)' }}>status:</span> "Available for Projects"
                 </div>
                 <div style={{ color: 'var(--foreground-secondary)' }}>
-                  <span style={{ color: 'var(--cyber-green)' }}>response_time:</span> "&lt; 24 hours"
+                  <span style={{ color: 'var(--cyber-green)' }}>response_time:</span> <span className="hidden xs:inline">"&lt; 24 hours"</span><span className="xs:hidden">"&lt; 24h"</span>
                 </div>
-                <div style={{ color: 'var(--foreground-secondary)' }}>
-                  <span style={{ color: 'var(--cyber-green)' }}>timezone:</span> "UTC+5 (PKT)"
+                <div style={{ color: 'var(--foreground-secondary)' }} className="break-words">
+                  <span style={{ color: 'var(--cyber-green)' }}>timezone:</span> <span className="hidden sm:inline">"UTC+5 (PKT)"</span><span className="sm:hidden">"UTC+5"</span>
                 </div>
-                <div style={{ color: 'var(--foreground-secondary)' }}>
-                  <span style={{ color: 'var(--cyber-green)' }}>preferred_contact:</span> "email || linkedin"
+                <div style={{ color: 'var(--foreground-secondary)' }} className="break-words">
+                  <span style={{ color: 'var(--cyber-green)' }}>preferred_contact:</span> <span className="hidden sm:inline">"email || linkedin"</span><span className="sm:hidden">"email"</span>
                 </div>
               </div>
             </div>
 
             {/* Contact Methods */}
-            <div className="space-y-6">
+            <div className="space-y-3 xs:space-y-4 md:space-y-6">
               <ContactBox
                 icon={<FaEnvelope />}
                 title="Email"
-                info={<a href="mailto:zainab.cyber.dev@gmail.com" style={{ color: 'var(--cyber-cyan)' }} className="hover:underline">zainab.cyber.dev@gmail.com</a>}
+                info={<a href="mailto:zainab.cyber.dev@gmail.com" style={{ color: 'var(--cyber-cyan)' }} className="hover:underline break-all text-xs xs:text-sm">zainab.cyber.dev@gmail.com</a>}
                 color="var(--cyber-cyan)"
               />
               <ContactBox
                 icon={<FaMapMarkerAlt />}
                 title="Location"
-                info="Remote + Karachi, Pakistan"
+                info={<span className="text-xs xs:text-sm"><span className="hidden sm:inline">Remote + </span>Karachi, Pakistan</span>}
                 color="var(--cyber-green)"
               />
               <ContactBox
                 icon={<BiChip />}
                 title="Specialization"
-                info="TypeScript • AI/ML • E-commerce"
+                info={<span className="text-xs xs:text-sm"><span className="hidden xs:inline">TypeScript • AI/ML • </span>E-commerce</span>}
                 color="var(--cyber-purple)"
               />
             </div>
 
             {/* Social Links */}
-            <div className="pt-6">
-              <h3 className="text-xl font-bold mb-4 font-mono" style={{ color: 'var(--cyber-green)' }}>
-                <span style={{ color: 'var(--cyber-cyan)' }}>&gt;</span> find_me --social
+            <div className="pt-3 xs:pt-4 md:pt-6">
+              <h3 className="text-base xs:text-lg md:text-xl font-bold mb-3 xs:mb-4 font-mono" style={{ color: 'var(--cyber-green)' }}>
+                <span style={{ color: 'var(--cyber-cyan)' }}>&gt;</span> <span className="hidden xs:inline">find_me --social</span><span className="xs:hidden">social</span>
               </h3>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 xs:gap-3 md:gap-4 justify-center lg:justify-start">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
@@ -159,7 +159,7 @@ const ContactPage = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-3 rounded-lg bg-cyber-card border transition-all cyber-hover-effect"
+                      className="group p-2 xs:p-3 rounded-lg bg-cyber-card border transition-all cyber-hover-effect"
                       style={{
                         border: '1px solid var(--border-muted)',
                         background: 'var(--background-secondary)'
@@ -169,8 +169,9 @@ const ContactPage = () => {
                         boxShadow: `0 10px 20px ${social.color}20`
                       }}
                       whileTap={{ scale: 0.95 }}
+                      title={social.label}
                     >
-                      <Icon className="w-6 h-6 transition-colors" style={{ color: social.color }} />
+                      <Icon className="w-4 h-4 xs:w-5 xs:h-5 md:w-6 md:h-6 transition-colors" style={{ color: social.color }} />
                     </motion.a>
                   );
                 })}
@@ -180,18 +181,19 @@ const ContactPage = () => {
 
           {/* Right Side - Contact Form */}
           <motion.div
+            className="order-1 lg:order-2"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-cyber-card rounded-xl p-8 border" style={{
+            <div className="bg-cyber-card rounded-xl p-4 xs:p-6 sm:p-8 border" style={{
               border: '1px solid var(--border-muted)',
               background: 'var(--background-secondary)'
             }}>
               {/* Form Header */}
-              <div className="flex items-center gap-2 mb-6">
-                <FiMail className="w-5 h-5" style={{ color: 'var(--cyber-cyan)' }} />
-                <h2 className="text-2xl font-bold font-mono" style={{ color: 'var(--cyber-cyan)' }}>
+              <div className="flex items-center gap-1.5 xs:gap-2 mb-4 xs:mb-6">
+                <FiMail className="w-4 h-4 xs:w-5 xs:h-5" style={{ color: 'var(--cyber-cyan)' }} />
+                <h2 className="text-lg xs:text-xl sm:text-2xl font-bold font-mono" style={{ color: 'var(--cyber-cyan)' }}>
                   send_message()
                 </h2>
                 {isTyping && (
@@ -207,11 +209,11 @@ const ContactPage = () => {
                 )}
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 xs:space-y-6">
                 {/* Name Input */}
-                <div className="space-y-2">
-                  <label className="flex items-center gap-2 font-mono text-sm" style={{ color: 'var(--cyber-green)' }}>
-                    <FiUser className="w-4 h-4" />
+                <div className="space-y-1.5 xs:space-y-2">
+                  <label className="flex items-center gap-1.5 xs:gap-2 font-mono text-xs xs:text-sm" style={{ color: 'var(--cyber-green)' }}>
+                    <FiUser className="w-3 h-3 xs:w-4 xs:h-4" />
                     <span>name:</span>
                   </label>
                   <input
@@ -221,7 +223,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     placeholder="Enter your name"
                     required
-                    className="w-full p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none"
+                    className="w-full p-3 xs:p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none text-sm xs:text-base"
                     style={{
                       color: 'var(--foreground)',
                       backgroundColor: 'var(--background-tertiary)',
@@ -233,9 +235,9 @@ const ContactPage = () => {
                 </div>
 
                 {/* Email Input */}
-                <div className="space-y-2">
-                  <label className="flex items-center gap-2 font-mono text-sm" style={{ color: 'var(--cyber-cyan)' }}>
-                    <FiMail className="w-4 h-4" />
+                <div className="space-y-1.5 xs:space-y-2">
+                  <label className="flex items-center gap-1.5 xs:gap-2 font-mono text-xs xs:text-sm" style={{ color: 'var(--cyber-cyan)' }}>
+                    <FiMail className="w-3 h-3 xs:w-4 xs:h-4" />
                     <span>email:</span>
                   </label>
                   <input
@@ -245,7 +247,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     placeholder="your.email@domain.com"
                     required
-                    className="w-full p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none"
+                    className="w-full p-3 xs:p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none text-sm xs:text-base"
                     style={{
                       color: 'var(--foreground)',
                       backgroundColor: 'var(--background-tertiary)',
@@ -257,9 +259,9 @@ const ContactPage = () => {
                 </div>
 
                 {/* Message Input */}
-                <div className="space-y-2">
-                  <label className="flex items-center gap-2 font-mono text-sm" style={{ color: 'var(--cyber-purple)' }}>
-                    <FiMessageSquare className="w-4 h-4" />
+                <div className="space-y-1.5 xs:space-y-2">
+                  <label className="flex items-center gap-1.5 xs:gap-2 font-mono text-xs xs:text-sm" style={{ color: 'var(--cyber-purple)' }}>
+                    <FiMessageSquare className="w-3 h-3 xs:w-4 xs:h-4" />
                     <span>message:</span>
                   </label>
                   <textarea
@@ -268,8 +270,8 @@ const ContactPage = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project idea..."
                     required
-                    rows={5}
-                    className="w-full p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none resize-none"
+                    rows={4}
+                    className="w-full p-3 xs:p-4 rounded-lg font-mono bg-transparent border transition-all focus:outline-none resize-none text-sm xs:text-base sm:rows-5"
                     style={{
                       color: 'var(--foreground)',
                       backgroundColor: 'var(--background-tertiary)',
@@ -284,7 +286,7 @@ const ContactPage = () => {
                 <motion.button
                   type="submit"
                   disabled={status === "loading"}
-                  className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-mono font-bold transition-all cyber-button ${
+                  className={`w-full flex items-center justify-center gap-1.5 xs:gap-2 px-4 xs:px-6 py-3 xs:py-4 rounded-lg font-mono font-bold transition-all cyber-button text-sm xs:text-base ${
                     status === "loading" ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   style={{
@@ -298,17 +300,19 @@ const ContactPage = () => {
                   {status === "loading" ? (
                     <>
                       <motion.div
-                        className="w-4 h-4 border-2 border-t-transparent rounded-full"
+                        className="w-3 h-3 xs:w-4 xs:h-4 border-2 border-t-transparent rounded-full"
                         style={{ borderColor: 'var(--cyber-green)' }}
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
-                      <span>SENDING...</span>
+                      <span className="hidden xs:inline">SENDING...</span>
+                      <span className="xs:hidden">SENDING</span>
                     </>
                   ) : (
                     <>
-                      <FiSend className="w-4 h-4" />
-                      <span>SEND MESSAGE</span>
+                      <FiSend className="w-3 h-3 xs:w-4 xs:h-4" />
+                      <span className="hidden xs:inline">SEND MESSAGE</span>
+                      <span className="xs:hidden">SEND</span>
                     </>
                   )}
                 </motion.button>
@@ -356,18 +360,19 @@ const ContactPage = () => {
 
         {/* Terminal Footer */}
         <motion.div
-          className="mt-16 text-center font-mono"
+          className="mt-8 xs:mt-12 md:mt-16 text-center font-mono"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="terminal-window p-4 inline-block">
-            <div style={{ color: 'var(--cyber-green)' }}>
-              <span style={{ color: 'var(--cyber-cyan)' }}>zainab@mindhacker</span>
+          <div className="terminal-window p-2 xs:p-3 sm:p-4 inline-block">
+            <div style={{ color: 'var(--cyber-green)' }} className="text-xs xs:text-sm break-words">
+              <span style={{ color: 'var(--cyber-cyan)' }} className="hidden xs:inline">zainab@mindhacker</span>
+              <span style={{ color: 'var(--cyber-cyan)' }} className="xs:hidden">zainab</span>
               <span style={{ color: 'var(--foreground-muted)' }}>:</span>
               <span style={{ color: 'var(--cyber-purple)' }}>~/contact</span>
               <span style={{ color: 'var(--foreground-muted)' }}>$ </span>
-              echo "Looking forward to your message!"
+              <span className="break-words">echo "Looking forward to your message!"</span>
             </div>
           </div>
         </motion.div>
@@ -386,7 +391,7 @@ interface ContactBoxProps {
 
 const ContactBox = ({ icon, title, info, color }: ContactBoxProps) => (
   <motion.div 
-    className="p-6 rounded-lg bg-cyber-card border transition-all duration-300 cyber-hover-effect"
+    className="p-3 xs:p-4 sm:p-6 rounded-lg bg-cyber-card border transition-all duration-300 cyber-hover-effect"
     style={{
       border: '1px solid var(--border-muted)',
       background: 'var(--background-secondary)'
@@ -396,15 +401,15 @@ const ContactBox = ({ icon, title, info, color }: ContactBoxProps) => (
       boxShadow: `0 10px 20px ${color}20` 
     }}
   >
-    <div className="flex items-start gap-4">
-      <div className="text-2xl mt-1" style={{ color }}>
+    <div className="flex items-start gap-2 xs:gap-3 md:gap-4">
+      <div className="text-lg xs:text-xl sm:text-2xl mt-0.5 xs:mt-1 flex-shrink-0" style={{ color }}>
         {icon}
       </div>
-      <div className="flex-1">
-        <h3 className="text-lg font-bold font-mono mb-2" style={{ color: 'var(--foreground)' }}>
+      <div className="flex-1 min-w-0">
+        <h3 className="text-sm xs:text-base sm:text-lg font-bold font-mono mb-1 xs:mb-2" style={{ color: 'var(--foreground)' }}>
           {title}
         </h3>
-        <div className="text-sm" style={{ color: 'var(--foreground-secondary)' }}>
+        <div className="text-xs xs:text-sm break-words" style={{ color: 'var(--foreground-secondary)' }}>
           {info}
         </div>
       </div>

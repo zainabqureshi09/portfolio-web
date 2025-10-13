@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: false,
-  },
-  experimental: {
-    // Explicitly disable turbopack for build
   }
 };
 
