@@ -37,99 +37,146 @@ import {
   SiStorybook,
   SiFigma,
 } from "react-icons/si";
-import { FaBrain, FaRobot, FaEye, FaShoppingCart, FaMobile } from "react-icons/fa";
-import { TbApi, TbDatabase, TbBrandOpenai } from "react-icons/tb";
+import { FaBrain, FaRobot, FaEye, FaShoppingCart, FaMobile, FaTerminal, FaServer, FaDatabase, FaShieldAlt, FaCode } from "react-icons/fa";
+import { TbApi, TbDatabase, TbBrandOpenai, TbBinaryTree } from "react-icons/tb";
 import { BiMath } from "react-icons/bi";
 import { MdSecurity, MdSpeed, MdAnalytics } from "react-icons/md";
 
 const skillCategories = {
-  "Core Languages": [
-    { name: "TypeScript", icon: SiTypescript, color: "#007ACC", level: "Advanced" },
-    { name: "Python", icon: SiPython, color: "#3776AB", level: "Proficient" },
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", level: "Advanced" },
-    { name: "C", icon: SiC, color: "#A8B9CC", level: "Intermediate" },
+  "CORE SYSTEMS": [
+    { name: "TypeScript", icon: SiTypescript, color: "#007ACC", level: "ADVANCED" },
+    { name: "Python", icon: SiPython, color: "#3776AB", level: "PROFICIENT" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", level: "ADVANCED" },
+    { name: "C", icon: SiC, color: "#A8B9CC", level: "INTERMEDIATE" },
   ],
-  "Frontend Frameworks": [
-    { name: "Next.js", icon: SiNextdotjs, color: "#000000", level: "Advanced" },
-    { name: "React", icon: SiReact, color: "#61DBFB", level: "Advanced" },
-    { name: "Framer Motion", icon: SiFramer, color: "#ff0050", level: "Intermediate" },
-    { name: "TailwindCSS", icon: SiTailwindcss, color: "#38BDF8", level: "Advanced" },
+  "FRONTEND SYSTEMS": [
+    { name: "Next.js", icon: SiNextdotjs, color: "#00FF88", level: "ADVANCED" },
+    { name: "React", icon: SiReact, color: "#00D8FF", level: "ADVANCED" },
+    { name: "Framer Motion", icon: SiFramer, color: "#FF0055", level: "INTERMEDIATE" },
+    { name: "TailwindCSS", icon: SiTailwindcss, color: "#00FFCC", level: "ADVANCED" },
   ],
-  "Backend & APIs": [
-    { name: "Node.js", icon: SiNodedotjs, color: "#68A063", level: "Proficient" },
-    { name: "Express.js", icon: SiExpress, color: "#000000", level: "Proficient" },
-    { name: "GraphQL", icon: SiGraphql, color: "#E10098", level: "Intermediate" },
-    { name: "REST APIs", icon: TbApi, color: "#FF6B35", level: "Advanced" },
+  "BACKEND & API": [
+    { name: "Node.js", icon: SiNodedotjs, color: "#68D063", level: "PROFICIENT" },
+    { name: "Express.js", icon: SiExpress, color: "#00FF88", level: "PROFICIENT" },
+    { name: "GraphQL", icon: SiGraphql, color: "#FF00AA", level: "INTERMEDIATE" },
+    { name: "REST APIs", icon: TbApi, color: "#FF6B35", level: "ADVANCED" },
   ],
-  "Databases & Storage": [
-    { name: "MongoDB", icon: SiMongodb, color: "#47A248", level: "Proficient" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "#336791", level: "Intermediate" },
-    { name: "Supabase", icon: SiSupabase, color: "#3ECF8E", level: "Intermediate" },
-    { name: "Prisma ORM", icon: SiPrisma, color: "#2D3748", level: "Intermediate" },
+  "DATA SYSTEMS": [
+    { name: "MongoDB", icon: SiMongodb, color: "#47FF48", level: "PROFICIENT" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#3367FF", level: "INTERMEDIATE" },
+    { name: "Supabase", icon: SiSupabase, color: "#00FF8E", level: "INTERMEDIATE" },
+    { name: "Prisma ORM", icon: SiPrisma, color: "#00FFCC", level: "INTERMEDIATE" },
   ],
-  "AI & Machine Learning": [
-    { name: "Computer Vision", icon: FaEye, color: "#FF4081", level: "Intermediate" },
-    { name: "AI Integration", icon: FaBrain, color: "#9C27B0", level: "Intermediate" },
-    { name: "OpenAI APIs", icon: TbBrandOpenai, color: "#00D4AA", level: "Proficient" },
-    { name: "ML Algorithms", icon: BiMath, color: "#FF9800", level: "Intermediate" },
+  "AI & NEURAL NETWORKS": [
+    { name: "Computer Vision", icon: FaEye, color: "#FF00FF", level: "INTERMEDIATE" },
+    { name: "AI Integration", icon: FaBrain, color: "#FF00AA", level: "INTERMEDIATE" },
+    { name: "OpenAI APIs", icon: TbBrandOpenai, color: "#00FFAA", level: "PROFICIENT" },
+    { name: "ML Algorithms", icon: TbBinaryTree, color: "#FF8800", level: "INTERMEDIATE" },
   ],
-  "Cloud & DevOps": [
-    { name: "Vercel", icon: SiVercel, color: "#000000", level: "Advanced" },
-    { name: "Docker", icon: SiDocker, color: "#2496ED", level: "Intermediate" },
-    { name: "Firebase", icon: SiFirebase, color: "#FFCA28", level: "Intermediate" },
+  "CLOUD & INFRA": [
+    { name: "Vercel", icon: SiVercel, color: "#00FF88", level: "ADVANCED" },
+    { name: "Docker", icon: SiDocker, color: "#00AAFF", level: "INTERMEDIATE" },
+    { name: "Firebase", icon: SiFirebase, color: "#FFCC00", level: "INTERMEDIATE" },
   ],
-  "Development Tools": [
-    { name: "Git", icon: SiGit, color: "#F05032", level: "Advanced" },
-    { name: "GitHub", icon: SiGithub, color: "#ffffff", level: "Advanced" },
-    { name: "Vite", icon: SiVite, color: "#646CFF", level: "Proficient" },
-    { name: "Webpack", icon: SiWebpack, color: "#8DD6F9", level: "Intermediate" },
+  "DEV TOOLS": [
+    { name: "Git", icon: SiGit, color: "#FF0055", level: "ADVANCED" },
+    { name: "GitHub", icon: SiGithub, color: "#00FF88", level: "ADVANCED" },
+    { name: "Vite", icon: SiVite, color: "#646CFF", level: "PROFICIENT" },
+    { name: "Webpack", icon: SiWebpack, color: "#8DD6F9", level: "INTERMEDIATE" },
   ],
-  "Quality & Testing": [
-    { name: "ESLint", icon: SiEslint, color: "#4B32C3", level: "Proficient" },
-    { name: "Prettier", icon: SiPrettier, color: "#F7B93E", level: "Proficient" },
-    { name: "Jest", icon: SiJest, color: "#C21325", level: "Intermediate" },
-    { name: "Cypress", icon: SiCypress, color: "#17202C", level: "Beginner" },
+  "SECURITY & TESTING": [
+    { name: "ESLint", icon: SiEslint, color: "#4B32FF", level: "PROFICIENT" },
+    { name: "Prettier", icon: SiPrettier, color: "#FFAA00", level: "PROFICIENT" },
+    { name: "Jest", icon: SiJest, color: "#FF0033", level: "INTERMEDIATE" },
+    { name: "Cypress", icon: SiCypress, color: "#00FFCC", level: "BEGINNER" },
   ],
-  "Specializations": [
-    { name: "E-commerce", icon: FaShoppingCart, color: "#4CAF50", level: "Advanced" },
-    { name: "Responsive Design", icon: FaMobile, color: "#2196F3", level: "Advanced" },
-    { name: "Performance", icon: MdSpeed, color: "#FF5722", level: "Intermediate" },
-    { name: "Analytics", icon: MdAnalytics, color: "#607D8B", level: "Intermediate" },
+  "SPECIALIZATIONS": [
+    { name: "E-commerce", icon: FaShoppingCart, color: "#00FF88", level: "ADVANCED" },
+    { name: "Mobile First", icon: FaMobile, color: "#00AAFF", level: "ADVANCED" },
+    { name: "Performance", icon: MdSpeed, color: "#FF5500", level: "INTERMEDIATE" },
+    { name: "Analytics", icon: MdAnalytics, color: "#00FFFF", level: "INTERMEDIATE" },
   ]
 };
 
 // Helper function to get level color
 const getLevelColor = (level: string) => {
   switch (level) {
-    case 'Advanced': return '#22C55E'; // Green
-    case 'Proficient': return '#3B82F6'; // Blue  
-    case 'Intermediate': return '#F59E0B'; // Orange
-    case 'Beginner': return '#EF4444'; // Red
-    default: return '#6B7280'; // Gray
+    case 'ADVANCED': return '#00FF88'; // Green
+    case 'PROFICIENT': return '#00AAFF'; // Blue  
+    case 'INTERMEDIATE': return '#FFAA00'; // Orange
+    case 'BEGINNER': return '#FF0055'; // Red
+    default: return '#00FFFF'; // Cyan
   }
 };
 
+// Matrix rain background component
+const MatrixRain = () => (
+  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-20">
+    <div className="absolute inset-0 bg-gradient-to-b from-black via-green-900/10 to-black" />
+    {[...Array(20)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute text-green-400 text-xs font-mono whitespace-nowrap"
+        style={{
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 5}s`,
+        }}
+        animate={{
+          y: [0, 1000],
+          opacity: [0, 1, 1, 0],
+        }}
+        transition={{
+          duration: 2 + Math.random() * 3,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {Math.random().toString(36).substring(2)}
+      </motion.div>
+    ))}
+  </div>
+);
+
 export default function SkillsPage() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-4 xs:px-6 sm:px-8 py-12 xs:py-16 md:py-20 text-white mt-16 xs:mt-20 md:mt-24">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-3 xs:px-4 sm:px-6 py-8 xs:py-12 sm:py-16 text-white overflow-hidden">
+      {/* Matrix Rain Background */}
+      <MatrixRain />
+      
+      {/* Animated Grid Background */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(0,255,136,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,136,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] pointer-events-none z-0" />
+
       {/* Heading */}
-      <motion.h2
-        className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 leading-tight"
+      <motion.div
+        className="relative z-10 text-center mb-6 xs:mb-8 sm:mb-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <span className="block xs:inline">Technical</span>
-        <span className="block xs:inline xs:ml-2">Arsenal</span>
-      </motion.h2>
+        <motion.h2
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-mono text-center"
+          style={{
+            textShadow: '0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88'
+          }}
+        >
+          <span className="text-green-400">SYSTEM_</span>
+          <span className="text-cyan-400">SKILLS</span>
+          <span className="text-green-400">.EXE</span>
+        </motion.h2>
 
-      <p className="mt-3 xs:mt-4 text-sm xs:text-base sm:text-lg text-gray-300 text-center max-w-xs xs:max-w-md sm:max-w-lg md:max-w-2xl px-2 xs:px-4 sm:px-0">
-        <span className="hidden sm:inline">A comprehensive toolkit spanning from algorithms to AI, built through 30+ projects including large-scale applications with 12MB+ codebases.</span>
-        <span className="sm:hidden">Toolkit spanning algorithms to AI, built through 30+ projects with large codebases.</span>
-      </p>
+        <motion.p
+          className="mt-2 xs:mt-3 sm:mt-4 text-xs xs:text-sm sm:text-base text-green-300 font-mono text-center max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg px-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <span className="hidden sm:inline">> COMPILING TECHNICAL ARSENAL... [32/32 MODULES LOADED]</span>
+          <span className="sm:hidden">> TECH ARSENAL [32 MODULES]</span>
+        </motion.p>
+      </motion.div>
 
       {/* Skills Categories */}
-      <div className="mt-8 xs:mt-10 sm:mt-12 w-full max-w-7xl space-y-8 xs:space-y-10 sm:space-y-12">
+      <div className="relative z-10 w-full max-w-7xl space-y-6 xs:space-y-8 sm:space-y-10">
         {Object.entries(skillCategories).map(([category, skills], categoryIndex) => (
           <motion.div
             key={category}
@@ -140,17 +187,23 @@ export default function SkillsPage() {
           >
             {/* Category Title */}
             <motion.h3
-              className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 xs:mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400"
+              className="text-sm xs:text-base sm:text-lg md:text-xl font-bold font-mono text-center mb-3 xs:mb-4 sm:mb-6 px-2 py-1 bg-black/50 border border-green-500/30 rounded-lg mx-auto w-fit"
+              style={{
+                textShadow: '0 0 5px #00ff88',
+                background: 'linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent)'
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 + 0.2 }}
             >
-              {category}
+              <span className="text-green-400">[</span>
+              <span className="text-cyan-300 mx-1 xs:mx-2">{category}</span>
+              <span className="text-green-400">]</span>
             </motion.h3>
 
             {/* Skills Grid for Category */}
             <motion.div
-              className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 xs:gap-4 sm:gap-6"
+              className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 xs:gap-3 sm:gap-4 px-2 xs:px-4"
               initial="hidden"
               animate="visible"
               variants={{
@@ -164,62 +217,79 @@ export default function SkillsPage() {
               {skills.map((skill, skillIndex) => (
                 <motion.div
                   key={`${category}-${skillIndex}`}
-                  className="relative group flex flex-col items-center p-2 xs:p-3 sm:p-4 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                  className="relative group flex flex-col items-center p-2 xs:p-3 rounded-lg border border-green-500/20 bg-black/40 backdrop-blur-sm hover:border-green-400/60 transition-all duration-300 overflow-hidden"
                   variants={{
                     hidden: { opacity: 0, y: 20, scale: 0.8 },
                     visible: { opacity: 1, y: 0, scale: 1 },
                   }}
                   whileHover={{
                     scale: 1.05,
-                    y: -5,
-                    boxShadow: `0 10px 25px -5px ${skill.color}20`,
+                    y: -2,
+                    borderColor: skill.color,
+                    boxShadow: `0 0 15px ${skill.color}40`,
                   }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
-                  {/* Glow Effect */}
+                  {/* Animated Border */}
                   <motion.div
-                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100"
                     style={{
-                      background: `radial-gradient(circle at center, ${skill.color}15, transparent 70%)`,
+                      background: `linear-gradient(45deg, transparent 40%, ${skill.color}80, transparent 60%)`,
+                    }}
+                    animate={{
+                      backgroundPosition: ['0% 0%', '200% 200%'],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "linear",
                     }}
                   />
 
                   {/* Level Indicator */}
-                  <div className="absolute top-1 xs:top-1.5 sm:top-2 right-1 xs:right-1.5 sm:right-2">
-                    <div 
-                      className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full"
+                  <div className="absolute top-1 right-1 z-10">
+                    <motion.div 
+                      className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full border border-white/20"
                       style={{ backgroundColor: getLevelColor(skill.level) }}
                       title={skill.level}
+                      whileHover={{ scale: 1.5 }}
                     />
                   </div>
 
                   {/* Skill Icon */}
                   <motion.div
-                    className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2 xs:mb-3"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 flex items-center justify-center mb-1 xs:mb-2 relative z-5"
+                    whileHover={{ scale: 1.3, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
                     <skill.icon 
-                      className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10" 
-                      style={{ color: skill.color }} 
+                      className="w-4 h-4 xs:w-6 xs:h-6 sm:w-8 sm:h-8" 
+                      style={{ 
+                        color: skill.color,
+                        filter: 'drop-shadow(0 0 2px rgba(0,255,136,0.5))'
+                      }} 
                     />
                   </motion.div>
 
                   {/* Skill Name */}
                   <motion.h4
-                    className="text-xs xs:text-sm font-medium text-center text-gray-200 group-hover:text-white transition-colors duration-300 line-clamp-2 px-1"
+                    className="text-[10px] xs:text-xs font-mono font-medium text-center text-green-300 group-hover:text-white transition-colors duration-300 line-clamp-2 px-1 relative z-5"
                     whileHover={{ scale: 1.05 }}
+                    style={{ textShadow: '0 0 5px currentColor' }}
                   >
                     {skill.name}
                   </motion.h4>
 
-                  {/* Level Badge (appears on hover) */}
+                  {/* Level Badge */}
                   <motion.div
-                    className="absolute -bottom-6 xs:-bottom-7 sm:-bottom-8 left-1/2 transform -translate-x-1/2 px-1.5 xs:px-2 py-0.5 xs:py-1 rounded-md text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
+                    className="absolute -bottom-4 xs:-bottom-5 left-1/2 transform -translate-x-1/2 px-1.5 xs:px-2 py-0.5 xs:py-1 rounded text-[8px] xs:text-xs font-mono font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-10 border border-white/20"
                     style={{
                       backgroundColor: getLevelColor(skill.level),
-                      color: 'white'
+                      color: 'black',
+                      textShadow: 'none'
                     }}
+                    initial={{ y: 10 }}
+                    whileHover={{ y: 0 }}
                   >
                     {skill.level}
                   </motion.div>
@@ -230,28 +300,56 @@ export default function SkillsPage() {
         ))}
       </div>
 
-      {/* Skills Summary Stats */}
+      {/* System Stats */}
       <motion.div
-        className="mt-8 xs:mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 md:gap-8 w-full max-w-4xl"
+        className="relative z-10 mt-6 xs:mt-8 sm:mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 w-full max-w-2xl xs:max-w-3xl px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="text-center">
-          <div className="text-2xl xs:text-3xl font-bold text-green-400">8</div>
-          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Advanced Skills</span><span className="xs:hidden">Advanced</span></div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl xs:text-3xl font-bold text-blue-400">12</div>
-          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Proficient Skills</span><span className="xs:hidden">Proficient</span></div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl xs:text-3xl font-bold text-purple-400">30+</div>
-          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Projects Built</span><span className="xs:hidden">Projects</span></div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl xs:text-3xl font-bold text-cyan-400">13MB</div>
-          <div className="text-gray-400 text-xs xs:text-sm"><span className="hidden xs:inline">Largest Codebase</span><span className="xs:hidden">Codebase</span></div>
+        {[
+          { value: "8", label: "ADVANCED", color: "text-green-400", sub: "SYSTEMS" },
+          { value: "12", label: "PROFICIENT", color: "text-cyan-400", sub: "MODULES" },
+          { value: "30+", label: "PROJECTS", color: "text-purple-400", sub: "DEPLOYED" },
+          { value: "13MB", label: "CODEBASE", color: "text-yellow-400", sub: "MAX SIZE" },
+        ].map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            className="text-center p-3 xs:p-4 rounded-lg border border-green-500/20 bg-black/40 backdrop-blur-sm"
+            whileHover={{ 
+              scale: 1.05, 
+              borderColor: '#00ff88',
+              boxShadow: '0 0 20px rgba(0,255,136,0.3)'
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className={`text-lg xs:text-xl sm:text-2xl font-bold font-mono ${stat.color}`}>
+              {stat.value}
+            </div>
+            <div className="text-green-300 text-[10px] xs:text-xs font-mono mt-1">
+              {stat.label}
+            </div>
+            <div className="text-green-500 text-[8px] xs:text-[10px] font-mono mt-0.5">
+              {stat.sub}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Terminal Footer */}
+      <motion.div
+        className="relative z-10 mt-8 xs:mt-12 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        <div className="font-mono text-green-400 text-xs xs:text-sm border border-green-500/30 rounded-lg px-4 py-2 xs:py-3 bg-black/50 inline-block">
+          <span className="text-cyan-400">$</span> SYSTEM_READY_FOR_DEPLOYMENT
+          <motion.span
+            className="ml-1 inline-block w-2 h-4 bg-green-400"
+            animate={{ opacity: [1, 0] }}
+            transition={{ duration: 0.5, repeat: Infinity }}
+          />
         </div>
       </motion.div>
     </section>
