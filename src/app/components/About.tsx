@@ -12,7 +12,7 @@ export default function AboutPage() {
 
       {/* Profile Image */}
       <motion.div
-        className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-2 xs:border-3 sm:border-4 border-white shadow-xl mb-6 xs:mb-8 lg:mb-0 lg:mr-8 xl:mr-12 flex-shrink-0"
+className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-2 xs:border-[3px] sm:border-4 border-white shadow-xl mb-6 xs:mb-8 lg:mb-0 lg:mr-8 xl:mr-12 flex-shrink-0"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
-import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { FiCode, FiDatabase, FiCpu, FiZap } from "react-icons/fi";
 import { BiChip } from "react-icons/bi";

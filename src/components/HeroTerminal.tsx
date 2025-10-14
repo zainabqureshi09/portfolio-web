@@ -43,7 +43,7 @@ const HeroTerminal: React.FC = () => {
           linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
           linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px)
         `,
-        backgroundSize: '20px 20px xs:30px xs:30px'
+        backgroundSize: '20px 20px'
       }} />
       
       {/* Floating Elements */}

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
 import { JSX, useState } from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiTerminal, FiSend, FiMail, FiUser, FiMessageSquare } from "react-icons/fi";
 import { BiChip } from "react-icons/bi";
 

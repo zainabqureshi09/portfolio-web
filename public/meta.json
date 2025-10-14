@@ -1,0 +1,5 @@
+{
+  "name": "metadata",
+  "description": "Optional project metadata file to avoid 404s in dev.",
+  "version": "1.0.0"
+}

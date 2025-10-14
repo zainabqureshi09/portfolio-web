@@ -39,7 +39,7 @@ export default function HeroSection() {
     <section className="relative flex flex-col items-center justify-center min-h-screen px-4 xs:px-6 sm:px-8 text-center mt-16 xs:mt-18 sm:mt-20 md:mt-24 lg:mt-28">
       {/* Floating Circular Image */}
       <motion.div
-        className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-52 xl:h-52 rounded-full overflow-hidden border-2 xs:border-3 sm:border-4 border-white shadow-xl mb-4 xs:mb-6 md:mb-8"
+className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-52 xl:h-52 rounded-full overflow-hidden border-2 xs:border-[3px] sm:border-4 border-white shadow-xl mb-4 xs:mb-6 md:mb-8"
         initial={{ y: 12 }}
         animate={{ y: [17] }}
         transition={{ repeat: 0 }}

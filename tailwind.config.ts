@@ -6,7 +6,20 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // Safelist dynamic classes used by the custom cursor
+    'bg-green-400', 'bg-orange-500', 'bg-blue-200',
+    'border-green-400', 'border-orange-500', 'border-blue-200',
+  ],
   theme: {
+    screens: {
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         // Cyber-royal theme colors
@@ -59,7 +72,8 @@ export default {
         'scanline': 'scanline 2s linear infinite',
         'terminal-cursor': 'terminal-cursor 1s step-end infinite',
         'float': 'float 3s ease-in-out infinite',
-        'matrix-rain': 'matrix-rain 20s linear infinite'
+        'matrix-rain': 'matrix-rain 20s linear infinite',
+        'blink': 'blink 1s step-end infinite',
       },
       keyframes: {
         'pulse-glow': {
@@ -89,6 +103,10 @@ export default {
         'matrix-rain': {
           '0%': { transform: 'translateY(-100vh)' },
           '100%': { transform: 'translateY(100vh)' }
+        },
+        'blink': {
+          '0%, 50%': { opacity: '1' },
+          '50.01%, 100%': { opacity: '0' }
         }
       },
       backgroundImage: {

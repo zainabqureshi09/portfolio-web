@@ -41,20 +41,16 @@ const Navbar = () => {
     <>
       {/* Main Navigation */}
       <motion.nav
-        className={`fixed top-2 xs:top-3 sm:top-4 left-1/2 transform -translate-x-1/2 w-[95%] xs:w-[92%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? "backdrop-blur-xl bg-black/30 shadow-2xl" 
-            : "backdrop-blur-lg bg-black/20 shadow-lg"
+            ? "backdrop-blur-lg bg-black/60 border-b border-white/10 shadow-lg" 
+            : "backdrop-blur-sm bg-black/30"
         }`}
-        style={{
-          border: "1px solid rgba(0, 255, 136, 0.2)",
-          borderRadius: "16px",
-        }}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="flex justify-between items-center px-3 xs:px-4 sm:px-5 md:px-6 py-2 xs:py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           {/* Logo - Responsive sizing */}
           <Link href="/" className="group flex-shrink-0">
             <motion.div 
@@ -157,6 +153,9 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
@@ -171,6 +170,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              id="mobile-menu"
               className="sm:hidden border-t border-green-400/20 bg-black/60 backdrop-blur-xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}

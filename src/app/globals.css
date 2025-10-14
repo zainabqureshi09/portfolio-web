@@ -87,7 +87,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--cyber-green);
   border-radius: 4px;
-  box-shadow: 0 0 10px var(--cyber-glow);
+  box-shadow: 0 0 10px var(--cyber-glow-green);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -96,7 +96,7 @@ body {
 
 /* Selection styling */
 ::selection {
-  background: var(--cyber-glow);
+  background: var(--cyber-glow-green);
   color: #000000;
 }
 
