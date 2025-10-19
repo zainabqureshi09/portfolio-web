@@ -367,7 +367,7 @@ const ContactPage = () => {
         >
           <div className="terminal-window p-2 xs:p-3 sm:p-4 inline-block">
             <div style={{ color: 'var(--cyber-green)' }} className="text-xs xs:text-sm break-words">
-              <span style={{ color: 'var(--cyber-cyan)' }} className="hidden xs:inline">zainab@mindhacker</span>
+              <span style={{ color: 'var(--cyber-cyan)' }} className="hidden xs:inline">zainab@hax0r</span>
               <span style={{ color: 'var(--cyber-cyan)' }} className="xs:hidden">zainab</span>
               <span style={{ color: 'var(--foreground-muted)' }}>:</span>
               <span style={{ color: 'var(--cyber-purple)' }}>~/contact</span>

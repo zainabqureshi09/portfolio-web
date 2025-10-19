@@ -65,10 +65,10 @@ const Navbar = () => {
               </div>
               <span className="font-mono text-base xs:text-lg sm:text-xl font-bold">
                 <span className="text-green-400 group-hover:text-green-300 transition-colors">
-                  Mind
+                  Zainab
                 </span>
                 <span className="text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                  Hacker
+                  hax0r
                 </span>
               </span>
             </motion.div>

@@ -18,7 +18,7 @@ const HeroTerminal: React.FC = () => {
       setShowTerminal(true);
       const lines = [
         '> whoami',
-        'zainab@mindhacker:~$ Full-Stack TypeScript Developer',
+        'zainab@hax0r:~$ Full-Stack TypeScript Developer',
         '> ls -la projects/',
         'Wood-N-Share (4MB) • Virtual-TryOn (13MB) • Fresh-Mart',
         '> git log --oneline | head -3',
@@ -89,7 +89,7 @@ const HeroTerminal: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <FiZap className="w-3 h-3 xs:w-4 xs:h-4" />
-                <span>The Mind Hacker</span>
+                <span>Dreams in to Reality</span>
               </motion.div>
 
               <motion.h1
@@ -193,7 +193,7 @@ const HeroTerminal: React.FC = () => {
                 <div className="flex items-center gap-1.5 xs:gap-2">
                   <FiTerminal className="w-3 h-3 xs:w-4 xs:h-4" style={{ color: 'var(--cyber-cyan)' }} />
                   <span style={{ color: 'var(--cyber-cyan)' }} className="text-xs xs:text-sm">
-                    <span className="hidden sm:inline">ghost-mind-terminal</span>
+                    <span className="hidden sm:inline">ghost-mind-system</span>
                     <span className="sm:hidden">terminal</span>
                   </span>
                 </div>
