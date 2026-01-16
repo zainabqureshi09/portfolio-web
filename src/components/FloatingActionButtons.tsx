@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Bot } from 'lucide-react';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
-import Link from 'next/link';
 import AdvancedChatbot from './AdvancedChatbot';
 
 export default function FloatingActionButtons() {
@@ -70,14 +69,14 @@ export default function FloatingActionButtons() {
                     {action.label}
                   </motion.span>
                   {action.href ? (
-                    <Link
+                    <a
                       href={action.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${action.color} p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110`}
                     >
                       <action.icon className="w-5 h-5 text-white" />
-                    </Link>
+                    </a>
                   ) : (
                     <button
                       onClick={action.onClick}

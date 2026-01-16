@@ -59,10 +59,10 @@ export default function HeroSection() {
             </Button>
 
             <Button asChild variant="outline" size="lg" className="group">
-              <Link href="https://github.com/zainabqureshi09" target="_blank">
+              <a href="https://github.com/zainabqureshi09" target="_blank" rel="noopener noreferrer">
                 GitHub Profile
                 <Github className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </Button>
 
             <Button asChild variant="secondary" size="lg">

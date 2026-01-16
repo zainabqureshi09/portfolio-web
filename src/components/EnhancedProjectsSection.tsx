@@ -129,18 +129,18 @@ export default function EnhancedProjectsSection() {
                         <div className="flex gap-3">
                           {project.liveUrl && (
                             <Button asChild className="flex-1 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 border-0">
-                              <Link href={project.liveUrl} target="_blank">
+                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="mr-2 h-4 w-4" />
                                 Live Demo
-                              </Link>
+                              </a>
                             </Button>
                           )}
                           {project.githubUrl && (
                             <Button asChild variant="outline" className="flex-1 border-slate-600 hover:border-emerald-500 hover:bg-emerald-500/10">
-                              <Link href={project.githubUrl} target="_blank">
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <Github className="mr-2 h-4 w-4" />
                                 Code
-                              </Link>
+                              </a>
                             </Button>
                           )}
                         </div>
@@ -232,18 +232,18 @@ export default function EnhancedProjectsSection() {
                         <div className="flex gap-2">
                           {project.liveUrl && (
                             <Button asChild size="sm" className="flex-1 bg-emerald-500 hover:bg-emerald-600 border-0 text-xs">
-                              <Link href={project.liveUrl} target="_blank">
+                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="mr-1 h-3 w-3" />
                                 Demo
-                              </Link>
+                              </a>
                             </Button>
                           )}
                           {project.githubUrl && (
                             <Button asChild size="sm" variant="outline" className="flex-1 border-slate-600 hover:border-emerald-500 text-xs">
-                              <Link href={project.githubUrl} target="_blank">
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <Github className="mr-1 h-3 w-3" />
                                 Code
-                              </Link>
+                              </a>
                             </Button>
                           )}
                         </div>
