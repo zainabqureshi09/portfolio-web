@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FiMenu, FiX, FiTerminal, FiCode, FiUser } from "react-icons/fi";
-import { BiChip } from "react-icons/bi";
+import { Menu, X, Home, User, Code, Wrench, Mail } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,15 +25,16 @@ const Navbar = () => {
   }, [pathname]);
 
   const navItems = [
-    { href: "/", label: "~/home", icon: FiTerminal, shortLabel: "home" },
-    { href: "/about", label: "./about", icon: FiUser, shortLabel: "about" },
-    { href: "/projects", label: "./projects", icon: FiCode, shortLabel: "projects" },
-    { href: "/skills", label: "./skills", icon: BiChip, shortLabel: "skills" },
-    { href: "/contact", label: "./contact", icon: FiTerminal, shortLabel: "contact" },
+    { href: "/" as const, label: "Home", icon: Home, shortLabel: "Home" },
+    { href: "/#about" as const, label: "About", icon: User, shortLabel: "About" },
+    { href: "/#skills" as const, label: "Skills", icon: Wrench, shortLabel: "Skills" },
+    { href: "/#projects" as const, label: "Projects", icon: Code, shortLabel: "Projects" },
+    { href: "/#contact" as const, label: "Contact", icon: Mail, shortLabel: "Contact" },
   ];
 
   const isActive = (path: string) => {
-    return pathname === path || (path !== "/" && pathname.startsWith(path));
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
   };
 
   return (
@@ -42,105 +42,49 @@ const Navbar = () => {
       {/* Main Navigation */}
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "backdrop-blur-lg bg-black/60 border-b border-white/10 shadow-lg" 
-            : "backdrop-blur-sm bg-black/30"
+          isScrolled
+            ? "bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg"
+            : "bg-slate-900/70 backdrop-blur-sm"
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          {/* Logo - Responsive sizing */}
+          {/* Logo */}
           <Link href="/" className="group flex-shrink-0">
-            <motion.div 
-              className="flex items-center space-x-1 xs:space-x-1.5 sm:space-x-2"
+            <motion.div
+              className="flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="relative">
-                <FiTerminal className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-green-400 group-hover:text-green-300 transition-colors" />
-                <div className="absolute inset-0 w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-green-400 group-hover:text-green-300 opacity-50 blur-sm transition-all" />
-              </div>
-              <span className="font-mono text-base xs:text-lg sm:text-xl font-bold">
-                <span className="text-green-400 group-hover:text-green-300 transition-colors">
-                  Zainab
-                </span>
-                <span className="text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                  hax0r
-                </span>
+              <span className="font-bold text-lg">
+                <span className="text-emerald-400">Zainab</span>
+                <span className="text-slate-200">Ayaz</span>
               </span>
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation - Enhanced responsive behavior */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.href);
-              
+
               return (
                 <Link key={item.href} href={item.href} className="group">
                   <motion.div
-                    className={`relative flex items-center space-x-1 lg:space-x-2 px-2 lg:px-3 xl:px-4 py-1.5 lg:py-2 rounded-lg font-mono transition-all duration-300 ${
-                      active 
-                        ? "bg-green-400/10 text-green-400 border border-green-400/20" 
-                        : "text-gray-300 hover:text-green-400 hover:bg-green-400/5 border border-transparent"
+                    className={`relative flex items-center space-x-1 lg:space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 ${
+                      active
+                        ? "text-emerald-400 bg-emerald-400/10"
+                        : "text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/5"
                     }`}
-                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Icon className={`w-3.5 h-3.5 lg:w-4 lg:h-4 ${active ? "text-green-400" : "text-gray-400 group-hover:text-green-400"} transition-colors`} />
-                    
-                    {/* Full label for large screens */}
-                    <span className="hidden xl:inline relative">
-                      {item.label}
-                      {active && (
-                        <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-green-400 to-cyan-400"
-                          layoutId="activeTab"
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        />
-                      )}
-                    </span>
-                    
-                    {/* Short label for medium screens */}
-                    <span className="xl:hidden text-xs lg:text-sm">
-                      {item.shortLabel}
-                    </span>
-                    
-                    {active && (
-                      <div className="absolute inset-0 rounded-lg bg-green-400/5 blur-sm" />
-                    )}
-                  </motion.div>
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Tablet Navigation (icons only) */}
-          <div className="hidden sm:flex md:hidden items-center space-x-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const active = isActive(item.href);
-              
-              return (
-                <Link key={item.href} href={item.href} className="group">
-                  <motion.div
-                    className={`relative p-2 rounded-lg transition-all duration-300 ${
-                      active 
-                        ? "bg-green-400/10 text-green-400 border border-green-400/20" 
-                        : "text-gray-300 hover:text-green-400 hover:bg-green-400/5"
-                    }`}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    title={item.label}
-                  >
-                    <Icon className="w-4 h-4" />
-                    {active && (
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full bg-green-400" />
-                    )}
+                    <Icon className={`w-4 h-4 ${active ? "text-emerald-400" : "text-slate-400 group-hover:text-emerald-400"}`} />
+                    <span>{item.label}</span>
                   </motion.div>
                 </Link>
               );
@@ -149,7 +93,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="sm:hidden relative p-2 text-green-400 hover:text-green-300 transition-colors"
+            className="md:hidden relative p-2 text-emerald-400 hover:text-emerald-300 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -161,7 +105,7 @@ const Navbar = () => {
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <FiX className="w-5 h-5 xs:w-6 xs:h-6" /> : <FiMenu className="w-5 h-5 xs:w-6 xs:h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </motion.div>
           </motion.button>
         </div>
@@ -171,13 +115,13 @@ const Navbar = () => {
           {isOpen && (
             <motion.div
               id="mobile-menu"
-              className="sm:hidden border-t border-green-400/20 bg-black/60 backdrop-blur-xl"
+              className="md:hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div className="px-4 xs:px-5 py-3 space-y-1">
+              <div className="px-4 py-3 space-y-1">
                 {navItems.map((item, index) => {
                   const Icon = item.icon;
                   const active = isActive(item.href);
@@ -191,27 +135,19 @@ const Navbar = () => {
                     >
                       <Link href={item.href}>
                         <motion.div
-                          className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-mono text-sm transition-all ${
+                          className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all ${
                             active
-                              ? "bg-green-400/10 text-green-400 border border-green-400/20"
-                              : "text-gray-300 hover:text-green-400 hover:bg-green-400/5 border border-transparent"
+                              ? "text-emerald-400 bg-emerald-400/10"
+                              : "text-slate-300 hover:text-emerald-400 hover:bg-emerald-400/5"
                           }`}
                           whileHover={{ x: 4, scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setIsOpen(false)}
                         >
                           <Icon
-                            className={`w-4 h-4 xs:w-5 xs:h-5 ${active ? "text-green-400" : "text-gray-400"}`}
+                            className={`w-4 h-4 ${active ? "text-emerald-400" : "text-slate-400"}`}
                           />
                           <span className="flex-1">{item.label}</span>
-                          {active && (
-                            <motion.div 
-                              className="w-2 h-2 rounded-full bg-green-400"
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              transition={{ delay: index * 0.1 + 0.2 }}
-                            />
-                          )}
                         </motion.div>
                       </Link>
                     </motion.div>
@@ -222,27 +158,6 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </motion.nav>
-
-      {/* Terminal Status Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-cyan-400 to-green-400 z-40"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      />
-
-      {/* Backdrop for mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 sm:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-      </AnimatePresence>
     </>
   );
 };

@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import CustomCursor from "./components/customCursor";
-import Footer from "./components/Footer";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-montserrat",
+  variable: "--font-inter",
 });
 
 const geistSans = Geist({
@@ -24,34 +23,37 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zainabs-portfolio-website.vercel.app"),
-  title: "Zainab Ayaz — The Mind Hacker | AI Developer & System Designer",
-  description: "Passionate Next.js & React developer skilled in AI, automation, and system design. Builds intelligent systems that think and influence.",
-  keywords: "Zainab Ayaz, Mind Hacker, AI Developer, Next.js, React, TensorFlow, System Design, Automation",
-  authors: [{ name: "Zainab Ayaz" }],
+  title: {
+    default: "Zainab Ayaz — Cybersecurity Student & Intelligent Systems Developer",
+    template: "%s | Zainab Ayaz Portfolio"
+  },
+  description: "Cybersecurity student and full-stack developer specializing in AI integration, secure systems, and modern web applications.",
+  keywords: ["Zainab Ayaz", "Cybersecurity", "Full-Stack Developer", "AI Developer", "TypeScript", "React", "Next.js", "Security", "Web Development"],
+  authors: [{ name: "Zainab Ayaz", url: "https://zainabs-portfolio-website.vercel.app" }],
   creator: "Zainab Ayaz",
   publisher: "Zainab Ayaz",
   openGraph: {
-    title: "Zainab Ayaz — The Mind Hacker",
-    description: "Transforming ideas into reality through intelligent systems",
+    type: "website",
+    locale: "en_US",
     url: "https://zainabs-portfolio-website.vercel.app",
+    title: "Zainab Ayaz — Cybersecurity Student & Intelligent Systems Developer",
+    description: "Cybersecurity student and full-stack developer specializing in AI integration, secure systems, and modern web applications.",
     siteName: "Zainab Ayaz Portfolio",
     images: [
       {
         url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
-        alt: "Zainab Ayaz - The Mind Hacker"
+        alt: "Zainab Ayaz - Cybersecurity Developer"
       }
     ],
-    locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zainab Ayaz — The Mind Hacker",
-    description: "AI Developer & System Designer | Building the future with intelligent systems",
+    title: "Zainab Ayaz — Cybersecurity Student & Intelligent Systems Developer",
+    description: "Cybersecurity student and full-stack developer specializing in AI integration, secure systems, and modern web applications.",
     images: ["/profile-pic.jpg"],
-    creator: "@zainabayaz", // Add your actual Twitter handle
+    creator: "@zainabayaz_dev",
   },
   icons: {
     icon: "/favicon.ico",
@@ -70,17 +72,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: { // Add for search engine verification if needed
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
-    // yahoo: 'your-yahoo-verification-code',
-  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0a",
+  themeColor: "#0f172a",
   colorScheme: "dark",
 };
 
@@ -90,31 +87,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <body 
-        suppressHydrationWarning={true} 
-        className="bg-cyber-gradient min-h-screen text-white antialiased overflow-x-hidden"
+    <html lang="en" className={`${inter.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        suppressHydrationWarning={true}
+        className="bg-slate-900 min-h-screen text-slate-100 antialiased overflow-x-hidden"
       >
-        {/* Custom Cursor */}
-        <CustomCursor />
-
         {/* Navbar */}
         <Navbar />
 
         {/* Main Content */}
         <main className="relative flex flex-col min-h-screen">
-          {/* Background Effects */}
-          <div className="fixed inset-0 bg-cyber-grid opacity-5 pointer-events-none" />
-          <div className="fixed inset-0 bg-gradient-to-br from-cyber-green-500/5 via-transparent to-cyber-purple-500/5 pointer-events-none" />
-          
-          {/* Content Wrapper */}
-          <div className="flex-1 relative z-10">
-            {children}
-          </div>
+          {children}
         </main>
 
         {/* Footer */}
         <Footer />
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </body>
     </html>
   );

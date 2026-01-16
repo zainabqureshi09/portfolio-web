@@ -10,31 +10,31 @@ const Footer = () => {
   
   const socialLinks = [
     { 
-      href: "https://github.com/zainabqureshi09", 
+      href: "https://github.com/zainabqureshi09" as string, 
       icon: FaGithub, 
       label: "GitHub",
       color: "hover:text-green-400"
     },
     { 
-      href: "https://www.linkedin.com/in/zainab-ayaz-3081482b5/", 
+      href: "https://www.linkedin.com/in/zainab-ayaz-3081482b5/" as string, 
       icon: FaLinkedin, 
       label: "LinkedIn",
       color: "hover:text-blue-400"
     },
     { 
-      href: "https://x.com/Zainab345690", 
+      href: "https://x.com/Zainab345690" as string, 
       icon: FaTwitter, 
       label: "Twitter",
       color: "hover:text-cyan-400"
     },
     { 
-      href: "https://www.instagram.com/zainab.tsx/", 
+      href: "https://www.instagram.com/zainab.tsx/" as string, 
       icon: FaInstagram, 
       label: "Instagram",
       color: "hover:text-pink-400"
     },
     { 
-      href: "https://www.facebook.com/profile.php?id=61555901770960", 
+      href: "https://www.facebook.com/profile.php?id=61555901770960" as string, 
       icon: FaFacebook, 
       label: "Facebook",
       color: "hover:text-blue-500"
@@ -42,11 +42,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { href: "/", label: "~/home", icon: FiTerminal },
-    { href: "/about", label: "./about", icon: FaUser },
-    { href: "/projects", label: "./projects", icon: FiCode },
-    { href: "/skills", label: "./skills", icon: BiChip },
-    { href: "/contact", label: "./contact", icon: FiMail },
+    { href: "/" as const, label: "~/home", icon: FiTerminal },
+    { href: "/#about" as const, label: "./about", icon: FaUser },
+    { href: "/#projects" as const, label: "./projects", icon: FiCode },
+    { href: "/#skills" as const, label: "./skills", icon: BiChip },
+    { href: "/#contact" as const, label: "./contact", icon: FiMail },
   ];
 
   return (
@@ -139,7 +139,7 @@ const Footer = () => {
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
-                  <Link 
+                  <a 
                     key={social.label}
                     href={social.href} 
                     target="_blank"
@@ -155,7 +155,7 @@ const Footer = () => {
                       <Icon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
                       <div className="absolute inset-0 rounded-lg bg-current opacity-0 group-hover:opacity-10 transition-opacity" />
                     </motion.div>
-                  </Link>
+                  </a>
                 );
               })}
             </div>
