@@ -11,107 +11,255 @@ import { BiChip } from "react-icons/bi";
 const projects = [
   {
     id: 1,
-    title: "Wood-N-Share Marketplace",
-    description: "Modern woodworking marketplace connecting artisans with customers. Features real-time inventory management and interactive product catalogs.",
+    title: "Smart Mart - Enterprise E-Commerce",
+    description: "Large-scale enterprise e-commerce platform with advanced inventory management, real-time analytics, and intelligent product recommendations. Built with modern TypeScript architecture.",
     image: "/e-com.jpg",
-    techStack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/zainabqureshi09/wood-n-share",
-    live: "https://wood-n-share.vercel.app",
-    category: "E-commerce",
-    size: "4MB+",
-    status: "Live & Active",
-    featured: true
+    techStack: ["TypeScript", "Next.js", "React", "E-commerce", "Analytics"],
+    github: "https://github.com/zainabqureshi09/Smart-Mart",
+    live: null,
+    category: "Enterprise",
+    size: "138MB",
+    status: "In Development",
+    featured: true,
+    stars: 0
   },
   {
     id: 2,
-    title: "Virtual Try-On System",
-    description: "AI-powered virtual try-on system using advanced computer vision. Large-scale TypeScript application with cutting-edge technology.",
-    image: "/e-com.jpg",
-    techStack: ["TypeScript", "AI/ML", "Computer Vision", "Next.js", "Algorithms"],
-    github: "https://github.com/zainabqureshi09/Next-TryOn",
-    live: "https://virtual-tryon-chi.vercel.app",
-    category: "AI/ML",
-    size: "12MB+",
-    status: "Live",
-    featured: true
+    title: "College Website Platform",
+    description: "Comprehensive college management system with student portals, course management, interactive campus tours, and administrative dashboards. Full-featured educational platform.",
+    image: "/college.png",
+    techStack: ["TypeScript", "Next.js", "React", "Education Tech", "CMS"],
+    github: "https://github.com/zainabqureshi09/college-website",
+    live: null,
+    category: "Education",
+    size: "56MB",
+    status: "Production Ready",
+    featured: true,
+    stars: 0
   },
   {
     id: 3,
-    title: "NewTryOn Platform",
-    description: "Enhanced virtual try-on platform with improved features and user experience. Large-scale TypeScript development.",
-    image: "/e-com.jpg",
-    techStack: ["TypeScript", "Virtual Reality", "Next.js", "Advanced UI/UX"],
-    github: "https://github.com/zainabqureshi09/newtryon",
-    live: "https://newtryon.vercel.app",
-    category: "Advanced Web Apps",
-    size: "13MB+",
+    title: "FKWC College Web Portal",
+    description: "Advanced educational web portal with integrated learning management system, student information system, and interactive features for modern education.",
+    image: "/college.png",
+    techStack: ["TypeScript", "Next.js", "LMS", "Student Portal"],
+    github: "https://github.com/zainabqureshi09/fkwc-college-web",
+    live: "https://my-college-website-ten.vercel.app",
+    category: "Education",
+    size: "55MB",
     status: "Live",
-    featured: true
+    featured: true,
+    stars: 0
   },
   {
     id: 4,
-    title: "Fresh Green Red Mart",
-    description: "Modern fresh produce marketplace with intelligent shopping features. Clean, intuitive interface for grocery shopping experience.",
+    title: "Quarter-4 Book Hackathon",
+    description: "Innovative book discovery and management platform built during hackathon. Features advanced search, personalized recommendations, and interactive reading experience.",
     image: "/e-com.jpg",
-    techStack: ["TypeScript", "Next.js", "E-commerce", "Inventory Management"],
-    github: "https://github.com/zainabqureshi09/fresh-green-red-mart",
-    live: "https://fresh-green-red-mart.vercel.app",
-    category: "E-commerce Platform",
-    size: "629KB",
-    status: "Live",
-    featured: true
+    techStack: ["HTML", "CSS", "JavaScript", "Book API", "UI/UX"],
+    github: "https://github.com/zainabqureshi09/Quarter-4-book-hackathon",
+    live: null,
+    category: "Hackathon",
+    size: "44MB",
+    status: "Complete",
+    featured: true,
+    stars: 0
   },
   {
     id: 5,
-    title: "Chef Cheese Parlour",
-    description: "Sophisticated restaurant website with modern design and interactive features. TypeScript-based with premium user experience.",
-    image: "/food.png",
-    techStack: ["TypeScript", "Next.js", "React", "CSS Animations"],
-    github: "https://github.com/zainabqureshi09/chef-cheese-parlour-",
-    live: "https://chef-cheese-parlour.vercel.app",
-    category: "Professional Web Dev",
-    size: "639KB",
+    title: "Hackathon E-Commerce Template",
+    description: "Professional e-commerce template with modern design patterns and best practices. Built during competitive hackathon with focus on user experience.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "E-commerce", "Template"],
+    github: "https://github.com/zainabqureshi09/Hackathon-3",
+    live: "https://hackathon-3-dusky-two.vercel.app",
+    category: "E-commerce",
+    size: "21MB",
     status: "Live",
-    featured: false
+    featured: true,
+    stars: 0
   },
   {
     id: 6,
-    title: "Temu E-commerce Clone",
-    description: "Full-featured e-commerce platform clone with modern TypeScript architecture.",
+    title: "Virtual Try-On AI System",
+    description: "AI-powered virtual try-on system using advanced computer vision and machine learning. Enables real-time clothing visualization with cutting-edge technology.",
     image: "/e-com.jpg",
-    techStack: ["TypeScript", "Next.js", "E-commerce", "React"],
-    github: "https://github.com/zainabqureshi09/temu-clone",
-    live: "https://temu-clone-eight.vercel.app",
-    category: "E-commerce Development",
-    size: "64KB",
-    status: "Live",
-    featured: false
+    techStack: ["TypeScript", "AI/ML", "Computer Vision", "Next.js", "TensorFlow"],
+    github: "https://github.com/zainabqureshi09/Next-TryOn",
+    live: "https://virtual-tryon-chi.vercel.app",
+    category: "AI/ML",
+    size: "13MB",
+    status: "Live & Active",
+    featured: true,
+    stars: 0
   },
   {
     id: 7,
-    title: "Smart Mart Platform",
-    description: "Intelligent shopping platform with TypeScript and modern features.",
+    title: "Word Skilled - Language Platform",
+    description: "Interactive language learning and skill development platform with gamification, progress tracking, and personalized learning paths.",
     image: "/e-com.jpg",
-    techStack: ["TypeScript", "Next.js", "Smart Features"],
-    github: "https://github.com/zainabqureshi09/Project-00",
-    live: "https://smart-mart-iota.vercel.app",
-    category: "Web Applications",
-    size: "531KB",
-    status: "Live",
-    featured: false
+    techStack: ["TypeScript", "Next.js", "Education", "Gamification"],
+    github: "https://github.com/zainabqureshi09/word-skilled",
+    live: null,
+    category: "Education",
+    size: "7MB",
+    status: "In Development",
+    featured: false,
+    stars: 0
   },
   {
     id: 8,
-    title: "Sudoku Solver Algorithm",
-    description: "Efficient Sudoku solving algorithm implemented in C programming language. Demonstrates optimization and mathematical problem-solving.",
+    title: "Wood-N-Share Marketplace",
+    description: "Modern woodworking marketplace connecting artisans with customers. Features real-time inventory management and interactive product catalogs.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "React", "E-commerce"],
+    github: "https://github.com/zainabqureshi09/wood-n-share",
+    live: "https://wood-n-share.vercel.app",
+    category: "E-commerce",
+    size: "4MB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 9,
+    title: "Hackathon Template 8",
+    description: "Professional web template built for hackathon competition with modern design patterns and responsive layout.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "Template Design"],
+    github: "https://github.com/zainabqureshi09/hackathon-templ-8",
+    live: "https://hackathon-templ-8.vercel.app",
+    category: "Templates",
+    size: "2MB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 10,
+    title: "Portfolio Website",
+    description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and interactive animations.",
     image: "/profile-pic.jpg",
-    techStack: ["C Programming", "Algorithms", "Data Structures", "Logic"],
-    github: "https://github.com/zainabqureshi09/sudoku",
+    techStack: ["TypeScript", "Next.js", "Framer Motion", "TailwindCSS"],
+    github: "https://github.com/zainabqureshi09/portfolio-web",
+    live: "https://zainabs-portfolio-website.vercel.app",
+    category: "Portfolio",
+    size: "1.6MB",
+    status: "Live & Active",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 11,
+    title: "Pizza Stop Restaurant",
+    description: "Modern restaurant website with online ordering system and interactive menu. Clean design with smooth animations.",
+    image: "/food.png",
+    techStack: ["TypeScript", "Next.js", "Restaurant Tech"],
+    github: "https://github.com/zainabqureshi09/Pizza-Stop-",
+    live: "https://pizza-stop-zeta.vercel.app",
+    category: "Restaurant",
+    size: "886KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 12,
+    title: "Hajj & Umrah Sanctuary",
+    description: "Comprehensive Islamic pilgrimage planning and information platform with guides, booking systems, and travel assistance.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "Travel Tech"],
+    github: "https://github.com/zainabqureshi09/hajj-umrah-sanctuary",
     live: null,
-    category: "Algorithms",
-    size: "2KB",
-    status: "Complete",
-    featured: false
+    category: "Travel",
+    size: "689KB",
+    status: "In Development",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 13,
+    title: "Chef Cheese Parlour",
+    description: "Sophisticated restaurant website with modern design and interactive features. Premium user experience with smooth animations.",
+    image: "/food.png",
+    techStack: ["TypeScript", "Next.js", "CSS Animations"],
+    github: "https://github.com/zainabqureshi09/chef-cheese-parlour-",
+    live: "https://chef-cheese-parlour.vercel.app",
+    category: "Restaurant",
+    size: "639KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 14,
+    title: "Fresh Green Red Mart",
+    description: "Modern fresh produce marketplace with intelligent shopping features and inventory management for grocery shopping.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "E-commerce"],
+    github: "https://github.com/zainabqureshi09/fresh-green-red-mart",
+    live: "https://fresh-green-red-mart.vercel.app",
+    category: "E-commerce",
+    size: "629KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 15,
+    title: "Business Website Template",
+    description: "Professional business website template with modern design and responsive layout for corporate needs.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "Business"],
+    github: "https://github.com/zainabqureshi09/business-website",
+    live: "https://business-website-inky.vercel.app",
+    category: "Business",
+    size: "627KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 16,
+    title: "Smart Mart Platform",
+    description: "Intelligent shopping platform with modern features and clean TypeScript architecture.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "E-commerce"],
+    github: "https://github.com/zainabqureshi09/Project-00",
+    live: "https://smart-mart-iota.vercel.app",
+    category: "E-commerce",
+    size: "531KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 17,
+    title: "Zyntelligence Documentation",
+    description: "Technical documentation platform with modern design and comprehensive guides for developers.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "Documentation"],
+    github: "https://github.com/zainabqureshi09/zyntelligence-docs",
+    live: "https://zyntelligence-docs.vercel.app",
+    category: "Documentation",
+    size: "514KB",
+    status: "Live",
+    featured: false,
+    stars: 0
+  },
+  {
+    id: 18,
+    title: "Atelier Weave Suite",
+    description: "Creative design suite for textile and fashion professionals with modern tools and workflows.",
+    image: "/e-com.jpg",
+    techStack: ["TypeScript", "Next.js", "Design Tools"],
+    github: "https://github.com/zainabqureshi09/atelier-weave-suite",
+    live: null,
+    category: "Design",
+    size: "503KB",
+    status: "In Development",
+    featured: false,
+    stars: 0
   }
 ];
 
@@ -174,8 +322,8 @@ const ProjectsPage = () => {
           </h1>
           
           <p className="text-sm xs:text-base sm:text-lg md:text-xl font-mono px-4 sm:px-0" style={{ color: 'var(--foreground-secondary)' }}>
-            <span className="hidden sm:inline">30+ projects • 13MB largest codebase • 6+ live applications</span>
-            <span className="sm:hidden">30+ projects • 6+ live apps</span>
+            <span className="hidden sm:inline">18 major projects • 138MB largest codebase • 12+ live applications</span>
+            <span className="sm:hidden">18 projects • 12+ live apps</span>
           </p>
         </motion.div>
 
@@ -293,35 +441,41 @@ const ProjectsPage = () => {
 
                   {/* Links */}
                   <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
-                    <a
+                    <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-lg font-mono text-xs xs:text-sm transition-all cyber-button"
+                      className="flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-lg font-mono text-xs xs:text-sm transition-all cyber-button relative overflow-hidden group"
                       style={{
                         color: 'var(--cyber-green)',
                         border: '1px solid var(--cyber-green)'
                       }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <FaGithub className="w-3 h-3 xs:w-4 xs:h-4" />
-                      <span>Code</span>
-                    </a>
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-green-600/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <FaGithub className="w-3 h-3 xs:w-4 xs:h-4 relative z-10 group-hover:rotate-12 transition-transform" />
+                      <span className="relative z-10">Code</span>
+                    </motion.a>
                     
                     {project.live && (
-                      <a
+                      <motion.a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-lg font-mono text-xs xs:text-sm transition-all"
+                        className="flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-lg font-mono text-xs xs:text-sm transition-all relative overflow-hidden group shadow-lg"
                         style={{
-                          background: 'var(--cyber-cyan)',
-                          color: 'var(--background)',
+                          background: 'linear-gradient(135deg, var(--cyber-cyan), var(--cyber-purple))',
+                          color: 'white',
                           border: '1px solid var(--cyber-cyan)'
                         }}
+                        whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(6, 182, 212, 0.4)' }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <FaExternalLinkAlt className="w-3 h-3 xs:w-4 xs:h-4" />
-                        <span>Live</span>
-                      </a>
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-purple-400/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <FaExternalLinkAlt className="w-3 h-3 xs:w-4 xs:h-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        <span className="relative z-10 font-bold">Live</span>
+                      </motion.a>
                     )}
                   </div>
                 </div>
@@ -409,28 +563,32 @@ const ProjectsPage = () => {
 
                 {/* Links */}
                 <div className="flex items-center gap-3">
-                  <a
+                  <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm flex items-center gap-1 transition-colors"
+                    className="text-sm flex items-center gap-1 transition-all hover:gap-2 group"
                     style={{ color: 'var(--cyber-green)' }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <FaGithub className="w-4 h-4" />
-                    <span>Code</span>
-                  </a>
+                    <FaGithub className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                    <span className="group-hover:underline">Code</span>
+                  </motion.a>
                   
                   {project.live && (
-                    <a
+                    <motion.a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 transition-colors"
+                      className="text-sm flex items-center gap-1 transition-all hover:gap-2 group"
                       style={{ color: 'var(--cyber-cyan)' }}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
                     >
-                      <FaExternalLinkAlt className="w-3 h-3" />
-                      <span>Live</span>
-                    </a>
+                      <FaExternalLinkAlt className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      <span className="group-hover:underline">Live</span>
+                    </motion.a>
                   )}
                 </div>
               </motion.div>

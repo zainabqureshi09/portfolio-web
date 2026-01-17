@@ -147,7 +147,7 @@ export default function EnhancedHeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex gap-4 justify-center lg:justify-start mb-8"
+                className="flex gap-4 justify-center lg:justify-start mb-8 flex-wrap"
               >
                 {socialLinks.map((social, index) => (
                   <motion.div
@@ -156,15 +156,18 @@ export default function EnhancedHeroSection() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1 + index * 0.1, type: 'spring' }}
                   >
-                    <a
+                    <motion.a
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 ${social.color} transition-all duration-300 hover:scale-110 hover:border-current hover:shadow-lg`}
+                      className={`flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-slate-400 ${social.color} transition-all duration-300 hover:border-current hover:shadow-lg hover:shadow-current/50 relative overflow-hidden group`}
                       aria-label={social.label}
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon className="w-5 h-5" />
-                    </a>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <social.icon className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform" />
+                    </motion.a>
                   </motion.div>
                 ))}
               </motion.div>
